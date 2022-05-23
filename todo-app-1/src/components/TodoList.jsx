@@ -1,19 +1,19 @@
 import React from "react";
 import Todo from "./Todo";
+import { List } from "@mui/material";
 
 function TodoList({ todos, toggleComplete, removeTodo }) {
   return (
-    <ul>
+    <List>
       {todos.map((todo) => (
-        <li key={todo.id}>
-          <Todo
-            todo={todo}
-            toggleComplete={toggleComplete}
-            removeTodo={removeTodo}
-          />
-        </li>
+        <Todo
+          key={todo.id}
+          todo={todo}
+          toggleComplete={toggleComplete}
+          removeTodo={removeTodo}
+        />
       ))}
-    </ul>
+    </List>
   );
 }
 

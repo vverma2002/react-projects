@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Typography from "@mui/material/Typography";
 import "./App.css";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
@@ -40,15 +41,15 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <p> React TODO </p>
-        <TodoForm addTodo={addTodo} />
-        <TodoList
-          todos={todos}
-          toggleComplete={toggleComplete}
-          removeTodo={removeTodo}
-        />
-      </header>
+      <Typography style={{ padding: 16 }} variant="h1">
+        React TODO
+      </Typography>
+      <TodoForm addTodo={addTodo} />
+      <TodoList
+        todos={todos}
+        toggleComplete={toggleComplete}
+        removeTodo={removeTodo}
+      />
     </div>
   );
 }

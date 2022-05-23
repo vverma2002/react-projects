@@ -1,4 +1,6 @@
 import React from "react";
+import { Checkbox, ListItem, IconButton, Typography } from "@mui/material";
+import { CloseRounded } from "@mui/icons-material";
 
 function Todo({ todo, toggleComplete, removeTodo }) {
   function handleCheckboxClick() {
@@ -9,11 +11,18 @@ function Todo({ todo, toggleComplete, removeTodo }) {
   }
 
   return (
-    <React.Fragment>
-      <input type="checkbox" onClick={handleCheckboxClick} />
-      {todo.task}
-      <button onClick={handleRemoveClick}>x</button>
-    </React.Fragment>
+    <ListItem style={{ display: "flex" }}>
+      <Checkbox onClick={handleCheckboxClick} checked={todo.completed} />
+      <Typography
+        variant="body"
+        style={{ textDecoration: todo.completed ? "line-through" : null }}
+      >
+        {todo.task}
+      </Typography>
+      <IconButton onClick={handleRemoveClick}>
+        <CloseRounded />
+      </IconButton>
+    </ListItem>
   );
 }
 
