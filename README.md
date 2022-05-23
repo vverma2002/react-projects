@@ -22,3 +22,6 @@ React Js Projects
 **5. Add other modules**
 
 *npm i bootstrap@4.1.1*
+*npm i uuid*
+*npm install @mui/material @emotion/react @emotion/styled*
+*npm install @mui/icons-material*
